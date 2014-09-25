@@ -25,7 +25,7 @@ public class LoginComponent extends BaseComponent{
 	public void clickOnLoginButton(){
 		 Assert.assertEquals("Login Button is not available",isElementPresent(By.xpath("//div[contains(@class,'ui-dialog')]//input[contains(@class,'lia-button-Submit-action')]")),true);
 	    driver.findElement(By.xpath("//div[contains(@class,'ui-dialog')]//input[contains(@class,'lia-button-Submit-action')]")).click();
-	    Assert.assertEquals("Login Is not sucessful.",isElementPresent(By.id("viewUserProfile")),true); 
+	    Assert.assertEquals("User is not Successfully logged in.",isElementPresent(By.id("viewUserProfile")),true); 
 	}
 	
 	public void logoutFromProfile(){
@@ -35,4 +35,12 @@ public class LoginComponent extends BaseComponent{
 	    driver.findElement(By.id("logoutPage")).click();
 	    Assert.assertEquals("Logout is not successful.",isElementPresent(By.id("loginPageV2")),true);
 	}
+	
+	public void logoutFromAdmin(){
+		
+	    Assert.assertEquals("LogOut Link is not Available on Community Admin",isElementPresent(By.xpath("//a[contains(@class,'logout-link')]")),true);
+		driver.findElement(By.xpath("//a[contains(@class,'logout-link')]")).click();
+	}
+	
 }
+

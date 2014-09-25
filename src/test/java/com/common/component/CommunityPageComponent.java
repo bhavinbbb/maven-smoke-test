@@ -10,6 +10,7 @@ public class CommunityPageComponent extends BaseComponent{
    public void clickOnCommunityAdmin() {
 	    Assert.assertEquals("Community Admin Link is not Available on Community Page.",isElementPresent(By.id("communityAdmin")),true);
 		driver.findElement(By.id("communityAdmin")).click();
+	    Assert.assertEquals("Community Admin is not successfully loaded.",isElementPresent(By.id("adminTabGroup")),true);
 		}
 		
    

@@ -1,0 +1,16 @@
+com/smoketest/StudioTabsTest.class
+com/common/component/StudioPageComponent.class
+com/common/component/LoginComponent.class
+com/common/page/LoginPage.class
+com/common/base/WebdriverUtils.class
+com/common/base/SeleniumBase.class
+com/smoketest/AppTest.class
+com/common/component/ViewProfilePageComponent.class
+com/smoketest/AdminTabsTest.class
+com/smoketest/ViewProfileTabsTest.class
+com/common/actions/LoginActions.class
+com/smoketest/VerifyLoginTest.class
+com/smoketest/LoginTest.class
+com/common/component/BaseComponent.class
+com/common/component/CommunityAdminComponent.class
+com/common/component/CommunityPageComponent.class

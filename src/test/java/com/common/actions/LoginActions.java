@@ -17,5 +17,14 @@ public class LoginActions {
 		LoginComponent loginComponent = new LoginComponent();
 		loginComponent.logoutFromProfile();
 	}
+	
+	public void logoutFromAdminUser(String username){
+		LoginComponent loginComponent = new LoginComponent();
+		loginComponent.logoutFromAdmin();
+	}
+	
+	public void verifyUserLoggedIn(){
+		
+	}
 
 }
