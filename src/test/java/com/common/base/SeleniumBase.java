@@ -32,27 +32,29 @@ public class SeleniumBase {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   private static String testEnv = "distributed.lithium.com/admin/welcome";//System.getProperty("env");
-  private static String browser= "saucelab"; //System.getProperty("browser");
+  private static String type= "saucelab"; //System.getProperty("browser");
   private static String key= "t5";
 
   
   
   public static void setUp() throws Exception {
 
-	  System.out.println(browser);
+	  System.out.println(type);
 	  System.out.println(testEnv);
-	  if(browser.equals("chrome"))
+	  System.out.println(System.getProperty("os"));
+	  if(type.equals("chrome"))
 	  {
 	       driver = new ChromeDriver();
 	  }
-	  else if (browser.equals("firefox"))
+	  else if (type.equals("firefox"))
 	  {
 		  driver = new FirefoxDriver();
 	  }
-	  else if (browser.equals("saucelab"))
-	  { DesiredCapabilities capabilities;
+	  else if (type.equals("saucelab"))
+	  { 
 		  if(System.getProperty("os").equals("android")) {
-	       capabilities = DesiredCapabilities.android();
+			  DesiredCapabilities capabilities;
+			  capabilities = DesiredCapabilities.android();
 	       capabilities.setCapability("platform", Platform.ANDROID);
 	       capabilities.setCapability("version",System.getProperty("version"));
 	 	  driver = new RemoteWebDriver(
@@ -60,7 +62,8 @@ public class SeleniumBase {
 	                capabilities);
 		  }
 		  else  if(System.getProperty("os").equals("win8") && System.getProperty("browser").equals("chrome")) {
-		       capabilities = DesiredCapabilities.chrome();
+			  DesiredCapabilities capabilities; 
+			  capabilities = DesiredCapabilities.chrome();
 		       capabilities.setCapability("platform", Platform.WIN8);
 		       capabilities.setCapability("version",System.getProperty("version"));
 		 	  driver = new RemoteWebDriver(
@@ -68,7 +71,8 @@ public class SeleniumBase {
 		                capabilities);
 			  } 
 		  else  if(System.getProperty("os").equals("win8") && System.getProperty("browser").equals("firefox")) {
-		       capabilities = DesiredCapabilities.firefox();
+			  DesiredCapabilities capabilities; 
+			  capabilities = DesiredCapabilities.firefox();
 		       capabilities.setCapability("platform", Platform.WIN8);
 		       capabilities.setCapability("version",System.getProperty("version"));
 		 	  driver = new RemoteWebDriver(
