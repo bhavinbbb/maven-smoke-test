@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.common.base.SeleniumBase.getDriver;
 import static com.common.base.SeleniumBase.getBaseUrl;
+import static com.common.base.SeleniumBase.getExtendedBaseUrl;
 
 
 
@@ -20,7 +21,7 @@ public class BaseComponent {
 	
 	protected WebDriver driver = getDriver();
 	protected String baseUrl = getBaseUrl();
-
+	protected String extendedBaseUrl = getExtendedBaseUrl();
 	
 	public void waitUntilLocatorIsPresent(By locator, long timeOutInSeconds) {
 
