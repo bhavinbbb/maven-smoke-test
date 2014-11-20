@@ -78,7 +78,44 @@ public class SeleniumBase {
 		 	  driver = new RemoteWebDriver(
 		                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
 		                capabilities);
-			  } 	        	        
+			  } 
+		  else  if(System.getProperty("os").equals("win8") && System.getProperty("browser").equals("ie")) {
+			  DesiredCapabilities capabilities; 
+			  capabilities = DesiredCapabilities.internetExplorer();
+		       capabilities.setCapability("platform", Platform.WIN8);
+		       capabilities.setCapability("version",System.getProperty("version"));
+		 	  driver = new RemoteWebDriver(
+		                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
+		                capabilities);
+			  } 
+		  else  if(System.getProperty("os").equals("win7") && System.getProperty("browser").equals("chrome")) {
+			  DesiredCapabilities capabilities; 
+			  capabilities = DesiredCapabilities.chrome();
+		       capabilities.setCapability("platform", Platform.WINDOWS);
+		       capabilities.setCapability("version",System.getProperty("version"));
+		 	  driver = new RemoteWebDriver(
+		                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
+		                capabilities);
+			  } 
+		  else  if(System.getProperty("os").equals("win7") && System.getProperty("browser").equals("firefox")) {
+			  DesiredCapabilities capabilities; 
+			  capabilities = DesiredCapabilities.firefox();
+		       capabilities.setCapability("platform", Platform.WINDOWS);
+		       capabilities.setCapability("version",System.getProperty("version"));
+		 	  driver = new RemoteWebDriver(
+		                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
+		                capabilities);
+			  } 
+		  else  if(System.getProperty("os").equals("win7") && System.getProperty("browser").equals("ie")) {
+			  DesiredCapabilities capabilities; 
+			  capabilities = DesiredCapabilities.internetExplorer();
+		       capabilities.setCapability("platform", Platform.WINDOWS);
+		       capabilities.setCapability("version",System.getProperty("version"));
+		 	  driver = new RemoteWebDriver(
+		                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
+		                capabilities);
+			  } 
+		  
 	        
 	
 	  }
