@@ -133,7 +133,26 @@ public class SeleniumBase {
 		                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
 		                capabilities);
 			  } 
-	        
+		  
+		  if(System.getProperty("os").equals("iPhone")) {
+			  DesiredCapabilities capabilities;
+			  capabilities = DesiredCapabilities.iphone();
+	       capabilities.setCapability("platform", Platform.ANY);
+	       capabilities.setCapability("version",System.getProperty("version"));
+	 	  driver = new RemoteWebDriver(
+	                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
+	                capabilities);
+		  }
+	      
+		  if(System.getProperty("os").equals("iPad")) {
+			  DesiredCapabilities capabilities;
+			  capabilities = DesiredCapabilities.ipad();
+	       capabilities.setCapability("platform", Platform.ANY);
+	       capabilities.setCapability("version",System.getProperty("version"));
+	 	  driver = new RemoteWebDriver(
+	                new URL("http://Widgets:bb892133-3338-4261-ba48-830d5bfb277e@ondemand.saucelabs.com:80/wd/hub"),
+	                capabilities);
+		  }
 	
 	  }
 	  else
