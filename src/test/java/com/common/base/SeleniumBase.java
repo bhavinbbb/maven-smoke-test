@@ -88,7 +88,6 @@ public class SeleniumBase {
 	  }
     baseUrl = "http://"+testEnv;
     extendedBaseUrl = baseUrl + "/"+ key;
-    driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
     driver.get(baseUrl);
   }
 
